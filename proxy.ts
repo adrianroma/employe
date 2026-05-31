@@ -1,9 +1,5 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import createMiddleware from 'next-intl/middleware';
-import { routing } from './src/i18n/routing';
-
-const handleI18n = createMiddleware(routing);
 
 function decodeJwt(token: string) {
   try {
@@ -16,7 +12,7 @@ function decodeJwt(token: string) {
         .join('')
     );
     return JSON.parse(jsonPayload);
-  } catch {
+  } catch (error) {
     return null;
   }
 }
@@ -26,12 +22,7 @@ export function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
   // Protect dashboard, admin, employee and api/admin routes
-  if (
-    path.startsWith('/dashboard') ||
-    path.startsWith('/admin') ||
-    path.startsWith('/employee') ||
-    path.startsWith('/api/admin')
-  ) {
+  if (path.startsWith('/dashboard') || path.startsWith('/admin') || path.startsWith('/employee') || path.startsWith('/api/admin')) {
     if (!token) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
@@ -41,25 +32,26 @@ export function proxy(request: NextRequest) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
 
+    // Check expiration
     if (decoded.exp && Date.now() >= decoded.exp * 1000) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
 
-    if (
-      (path.startsWith('/admin') || path.startsWith('/api/admin')) &&
-      decoded.role !== 'admin'
-    ) {
-      return NextResponse.redirect(new URL('/employee', request.url));
+    // Role check for admin routes
+    if (path.startsWith('/admin') || path.startsWith('/api/admin')) {
+      if (decoded.role !== 'admin') {
+        return NextResponse.redirect(new URL('/employee', request.url));
+      }
     }
 
-    if (path.startsWith('/employee') && decoded.role !== 'employee') {
-      return NextResponse.redirect(new URL('/admin', request.url));
+    // Role check for employee routes
+    if (path.startsWith('/employee')) {
+      if (decoded.role !== 'employee') {
+        return NextResponse.redirect(new URL('/admin', request.url));
+      }
     }
 
-    // API routes don't need locale detection
-    if (path.startsWith('/api/')) {
-      return NextResponse.next();
-    }
+    return NextResponse.next();
   }
 
   // Redirect signed-in users away from auth pages
@@ -73,16 +65,11 @@ export function proxy(request: NextRequest) {
     }
   }
 
-  return handleI18n(request);
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: [
-    // All page routes (for auth + locale detection), excluding static assets
-    '/((?!api|_next/static|_next/image|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-    // Admin API routes (for auth)
-    '/api/admin/:path*',
-  ],
+  matcher: ['/dashboard/:path*', '/admin/:path*', '/employee/:path*', '/api/admin/:path*', '/login', '/register'],
 };
 
 export default proxy;
