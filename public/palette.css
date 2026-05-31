@@ -1,0 +1,174 @@
+:root {
+/* crimson */
+--crimson-100: #ff253a;
+--crimson-200: #ea2c59;
+/* white */
+--white-100: #fff;
+--white-200: #fdfdfd;
+--white-300: rgba(255,255,255,.92);
+--white-400: hsla(0,0%,100%,.9);
+--white-500: #ffffff;
+--white-600: rgb(255,255,255);
+--white-700: hsla(0,0%,100%,.5);
+--white-800: hsla(0,0%,100%,.8);
+--white-900: hsla(0,0%,100%,.7);
+--white-1000: hsla(0,0%,100%,.3);
+/* whitesmoke */
+--whitesmoke-100: #eee;
+--whitesmoke-200: #f6f6f6;
+--whitesmoke-300: #f3f3f3;
+--whitesmoke-400: rgb(238,238,238);
+/* black */
+--black-100: #000;
+--black-200: #111;
+--black-300: rgba(0,0,0,.05);
+--black-400: rgba(0,0,0,0.5);
+--black-500: rgba(0,0,0,0.15);
+--black-600: #0b0b0b;
+--black-700: #000000;
+--black-800: rgb(0,0,0);
+--black-900: rgba(0,0,0,.3);
+--black-1000: rgba(0,0,0,0);
+/* darkslategray */
+--darkslategray-100: #444;
+--darkslategray-200: #333;
+--darkslategray-300: #32373c;
+--darkslategray-400: #2d3940;
+--darkslategray-500: #3e3e3e;
+--darkslategray-600: #464646;
+--darkslategray-700: rgba(50,50,50,.7);
+--darkslategray-800: rgba(50,50,50,.8);
+/* lightgray */
+--lightgray-100: #cecece;
+--lightgray-200: #ccc;
+/* cornflowerblue */
+--cornflowerblue-100: #2ea3f2;
+--cornflowerblue-200: #0c71c3;
+--cornflowerblue-300: #0693e3;
+--cornflowerblue-400: rgb(6,147,227);
+--cornflowerblue-500: rgb(152,150,240);
+--cornflowerblue-600: rgba(0,139,219,.247059);
+/* gainsboro */
+--gainsboro-100: #e2e2e2;
+--gainsboro-200: #e5e5e5;
+--gainsboro-300: #ddd;
+/* darkgray */
+--darkgray-100: #999;
+/* lightblue */
+--lightblue-100: #82c0c7;
+/* silver */
+--silver-100: #bdbdbd;
+--silver-200: #c8c8c8;
+--silver-300: #abb8c3;
+--silver-400: #bbb;
+--silver-500: rgb(169,184,195);
+/* deepskyblue */
+--deepskyblue-100: #3cb4e5;
+--deepskyblue-200: #00a4e5;
+--deepskyblue-300: rgba(60,180,229,0.8);
+/* darkslateblue */
+--darkslateblue-100: #3b5998;
+--darkslateblue-200: rgba(6,66,118,0.95);
+--darkslateblue-300: rgba(6,66,118,0.85);
+--darkslateblue-400: #064276;
+--darkslateblue-500: #0d5ba5;
+/* yellow */
+--yellow-100: #fff100;
+--yellow-200: rgb(254,248,76);
+/* gold */
+--gold-100: #efe956;
+--gold-200: #ffd800;
+/* aqua */
+--aqua-100: #21f8f8;
+/* palevioletred */
+--palevioletred-100: #f78da7;
+/* firebrick */
+--firebrick-100: #cf2e2e;
+--firebrick-200: rgb(207,46,46);
+/* orangered */
+--orangered-100: #ff6900;
+--orangered-200: rgb(255,105,0);
+/* orange */
+--orange-100: #fcb900;
+--orange-200: rgb(252,185,0);
+/* mediumaquamarine */
+--mediumaquamarine-100: #7bdcb5;
+--mediumaquamarine-200: #29c4a9;
+--mediumaquamarine-300: rgb(122,220,180);
+--mediumaquamarine-400: rgba(41,196,169,.15);
+/* mediumseagreen */
+--mediumseagreen-100: #00d084;
+--mediumseagreen-200: rgb(0,208,130);
+/* lightskyblue */
+--lightskyblue-100: #8ed1fc;
+/* darkorchid */
+--darkorchid-100: #9b51e0;
+--darkorchid-200: #7e3bd0;
+--darkorchid-300: rgb(155,81,224);
+/* dimgray */
+--dimgray-100: #666;
+--dimgray-200: #4e4e4e;
+--dimgray-300: #555;
+/* blueviolet */
+--blueviolet-100: #974df3;
+/* turquoise */
+--turquoise-100: rgb(74,234,220);
+/* mediumpurple */
+--mediumpurple-100: rgb(151,120,209);
+/* mediumorchid */
+--mediumorchid-100: rgb(207,42,186);
+/* deeppink */
+--deeppink-100: rgb(238,44,130);
+/* salmon */
+--salmon-100: rgb(251,105,98);
+/* thistle */
+--thistle-100: rgb(255,206,236);
+/* peachpuff */
+--peachpuff-100: rgb(254,205,165);
+/* red */
+--red-100: rgb(254,45,45);
+--red-200: rgba(255,0,0,.7);
+/* purple */
+--purple-100: rgb(107,0,62);
+/* sandybrown */
+--sandybrown-100: rgb(255,203,112);
+/* orchid */
+--orchid-100: rgb(199,81,192);
+/* royalblue */
+--royalblue-100: rgb(65,88,208);
+--royalblue-200: rgb(40,116,252);
+/* lemonchiffon */
+--lemonchiffon-100: rgb(255,245,203);
+/* paleturquoise */
+--paleturquoise-100: rgb(182,227,212);
+/* cadetblue */
+--cadetblue-100: rgb(51,167,181);
+/* palegreen */
+--palegreen-100: rgb(202,248,128);
+/* lightgreen */
+--lightgreen-100: rgb(113,206,126);
+/* navy */
+--navy-100: rgb(2,3,129);
+/* steelblue */
+--steelblue-100: #3b7bbf;
+/* Logo Colors */
+--gold: rgb(232, 223, 82);
+--darkturquoise: rgb(58, 201, 217);
+--steelblue: rgb(5, 74, 125);
+--gray: rgb(110, 134, 116);
+--cadetblue: rgb(44, 156, 180);
+--steelblue: rgb(36, 132, 164);
+/* Homepage Colors */
+--dimgray: rgb(99, 100, 99);
+--black: rgb(23, 30, 28);
+--steelblue: rgb(60, 124, 194);
+--palegoldenrod: rgb(231, 224, 151);
+--black: rgb(54, 41, 22);
+--darkslategray: rgb(61, 54, 24);
+--darkseagreen: rgb(166, 190, 141);
+--darkslategray: rgb(61, 61, 64);
+--darkgray: rgb(155, 155, 148);
+--steelblue: rgb(65, 117, 161);
+--steelblue: rgb(39, 111, 160);
+--cadetblue: rgb(106, 147, 151);
+}
