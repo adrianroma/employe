@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { NeuCard, NeuCardHeader, NeuCardTitle, NeuCardDescription, NeuCardContent, NeuCardFooter } from "@/components/ui/neu-card";
@@ -29,6 +30,7 @@ interface LoginResponse {
 
 export default function LoginForm() {
   const router = useRouter();
+  const locale = useLocale();
   const [formData, setFormData] = useState<LoginFormData>({
     email: "",
     password: "",
@@ -83,9 +85,9 @@ export default function LoginForm() {
       // Redirect based on role with a full page refresh to ensure layouts sync with the new session
       const userRole = data.data?.role;
       if (userRole === "admin") {
-        window.location.href = "/admin";
+        window.location.href = `/${locale}/admin`;
       } else {
-        window.location.href = "/employee";
+        window.location.href = `/${locale}/employee`;
       }
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");

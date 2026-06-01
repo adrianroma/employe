@@ -3,6 +3,7 @@
 import { UserCheck, UserX, Clock, TrendingUp, Timer, Users } from "lucide-react";
 import { NeuStatCard } from "@/components/ui/neu-stat-card";
 import { ChipLoader } from "@/components/ui/chip-loader";
+import { useTranslations } from "next-intl";
 
 interface AttendanceStatsData {
   totalEmployees: number;
@@ -23,6 +24,8 @@ interface AttendanceStatsProps {
 }
 
 export function AttendanceStats({ stats, isLoading }: AttendanceStatsProps) {
+  const t = useTranslations("admin.stats");
+
   if (isLoading || !stats) {
     return <ChipLoader size="md" />;
   }
@@ -43,50 +46,50 @@ export function AttendanceStats({ stats, isLoading }: AttendanceStatsProps) {
       {/* First Row - 4 cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <NeuStatCard
-          title="Present Today"
+          title={t("presentToday")}
           value={stats.presentToday}
           icon={<UserCheck className="w-6 h-6" />}
           trend={getTrend(stats.presentTrend)}
           trendValue={stats.presentTrend !== 0 ? formatTrendValue(stats.presentTrend) : undefined}
-          subtitle="vs yesterday"
+          subtitle={t("vsYesterday")}
         />
         <NeuStatCard
-          title="Absent Today"
+          title={t("absentToday")}
           value={stats.absentToday}
           icon={<UserX className="w-6 h-6" />}
           trend="down"
-          subtitle="employees"
+          subtitle={t("employees")}
         />
         <NeuStatCard
-          title="Late Today"
+          title={t("lateToday")}
           value={stats.lateToday}
           icon={<Clock className="w-6 h-6" />}
           trend={getTrend(stats.lateTrend)}
           trendValue={stats.lateTrend !== 0 ? formatTrendValue(stats.lateTrend) : undefined}
-          subtitle="vs yesterday"
+          subtitle={t("vsYesterday")}
         />
         <NeuStatCard
-          title="Attendance Rate"
+          title={t("attendanceRate")}
           value={`${stats.attendanceRate}%`}
           icon={<TrendingUp className="w-6 h-6" />}
           trend={stats.attendanceRate >= 90 ? "up" : stats.attendanceRate >= 75 ? "neutral" : "down"}
-          subtitle="this month"
+          subtitle={t("thisMonth")}
         />
       </div>
 
       {/* Second Row - 2 cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <NeuStatCard
-          title="Avg Hours/Day"
+          title={t("avgHours")}
           value={`${stats.avgHoursThisMonth}h`}
           icon={<Timer className="w-6 h-6" />}
-          subtitle="this month"
+          subtitle={t("thisMonth")}
         />
         <NeuStatCard
-          title="Total Employees"
+          title={t("totalEmployees")}
           value={stats.totalEmployees}
           icon={<Users className="w-6 h-6" />}
-          subtitle="active"
+          subtitle={t("active")}
         />
       </div>
     </div>

@@ -1,0 +1,443 @@
+{
+  "common": {
+    "language": {
+      "en": "EN",
+      "es": "ES",
+      "english": "English",
+      "spanish": "Español"
+    }
+  },
+  "home": {
+    "nav": {
+      "home": "Inicio",
+      "stats": "Estadísticas",
+      "features": "Características",
+      "portal": "Portal"
+    },
+    "stats": {
+      "title": "Potente y Escalable",
+      "description": "Construido con tecnología moderna para fiabilidad y rendimiento"
+    },
+    "features": {
+      "title": "Plataforma HR Completa",
+      "description": "Todo lo que necesitas para gestionar tu equipo de forma eficiente"
+    }
+  },
+  "auth": {
+    "login": {
+      "quote": "¡Bienvenido de nuevo! Registra asistencia, gestiona permisos y optimiza tu flujo de trabajo.",
+      "quoteAuthor": "Equipo AttendEase"
+    },
+    "register": {
+      "quote": "¡Únete hoy! Comienza a gestionar la asistencia de tu equipo de forma eficiente.",
+      "quoteAuthor": "Equipo AttendEase"
+    },
+    "signIn": {
+      "title": "Inicia sesión en tu cuenta",
+      "subtitle": "Ingresa tus credenciales para iniciar sesión",
+      "email": "Correo",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Ingresa tu contraseña",
+      "signingIn": "Iniciando sesión...",
+      "submit": "Iniciar Sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUpLink": "Registrarse",
+      "loginFailed": "Error al iniciar sesión. Por favor intenta de nuevo.",
+      "unexpectedError": "Ocurrió un error inesperado. Por favor intenta de nuevo."
+    },
+    "signUp": {
+      "title": "Crear una cuenta",
+      "subtitle": "Ingresa tus datos para registrarte",
+      "fullName": "Nombre Completo",
+      "email": "Correo",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Crea una contraseña (mín. 6 caracteres)",
+      "confirmPassword": "Confirmar Contraseña",
+      "confirmPasswordPlaceholder": "Confirma tu contraseña",
+      "department": "Departamento",
+      "departmentPlaceholder": "Selecciona Departamento (Opcional)",
+      "creatingAccount": "Creando cuenta...",
+      "submit": "Crear Cuenta",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+      "signInLink": "Iniciar sesión",
+      "registrationFailed": "Error en el registro. Por favor intenta de nuevo.",
+      "unexpectedError": "Ocurrió un error inesperado. Por favor intenta de nuevo."
+    },
+    "common": {
+      "orContinueWith": "O continúa con",
+      "continueWithGoogle": "Continuar con Google",
+      "backToHome": "Volver al Inicio",
+      "comingSoonTitle": "Próximamente",
+      "comingSoonDescription": "El inicio de sesión con Google está en desarrollo. Por favor usa correo/contraseña por ahora.",
+      "gotIt": "Entendido"
+    }
+  },
+  "dashboard": {
+    "title": "Panel de Control",
+    "header": {
+      "logout": "Cerrar Sesión",
+      "loading": "Cargando..."
+    }
+  },
+  "admin": {
+    "sidebar": {
+      "dashboard": "Panel",
+      "employees": "Empleados",
+      "attendance": "Asistencia",
+      "leaves": "Permisos",
+      "payroll": "Nómina",
+      "shifts": "Turnos",
+      "departments": "Departamentos",
+      "reports": "Informes",
+      "auditLogs": "Registro de Auditoría",
+      "settings": "Configuración",
+      "expand": "Expandir Barra Lateral",
+      "collapse": "Colapsar Barra Lateral"
+    },
+    "common": {
+      "loading": "Cargando",
+      "retry": "Reintentar",
+      "cancel": "Cancelar",
+      "saveChanges": "Guardar Cambios",
+      "create": "Crear",
+      "update": "Actualizar",
+      "delete": "Eliminar",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "noDescription": "Sin descripción.",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "records": "registros",
+      "entries": "entradas"
+    },
+    "dashboard": {
+      "attendanceRecords": "Registros de Asistencia",
+      "previousMonth": "Mes anterior",
+      "nextMonth": "Mes siguiente",
+      "showing": "Mostrando {from} a {to} de {total} registros"
+    },
+    "employees": {
+      "title": "Gestión de Empleados",
+      "exportExcel": "Exportar Excel",
+      "addEmployee": "Agregar Empleado",
+      "searchPlaceholder": "Buscar empleados por nombre, correo o departamento...",
+      "tableTitle": "Todos los Empleados ({count})",
+      "noEmployees": "No se encontraron empleados",
+      "adjustSearch": "Intenta ajustar tu búsqueda",
+      "addFirst": "Agrega tu primer empleado para comenzar",
+      "addDialog": {
+        "title": "Agregar Nuevo Empleado",
+        "fullName": "Nombre Completo",
+        "fullNamePlaceholder": "Ingresa el nombre del empleado",
+        "email": "Correo",
+        "emailPlaceholder": "Ingresa el correo electrónico",
+        "password": "Contraseña",
+        "passwordPlaceholder": "Ingresa la contraseña (mín. 6 caracteres)",
+        "role": "Rol",
+        "department": "Departamento",
+        "departmentPlaceholder": "Selecciona departamento",
+        "submit": "Agregar Empleado"
+      },
+      "editDialog": {
+        "title": "Editar Empleado",
+        "passwordLabel": "Nueva Contraseña (opcional)",
+        "passwordPlaceholder": "Dejar en blanco para mantener la contraseña actual",
+        "saveChanges": "Guardar Cambios"
+      },
+      "deleteDialog": {
+        "title": "Eliminar Empleado",
+        "confirm": "¿Estás seguro de que deseas eliminar este empleado?",
+        "warning": "Esto también eliminará todos sus registros de asistencia. Esta acción no se puede deshacer.",
+        "button": "Eliminar Empleado"
+      },
+      "validation": {
+        "nameRequired": "El nombre es obligatorio",
+        "emailRequired": "El correo es obligatorio",
+        "emailInvalid": "Formato de correo inválido",
+        "passwordRequired": "La contraseña es obligatoria",
+        "passwordMinLength": "La contraseña debe tener al menos 6 caracteres"
+      }
+    },
+    "attendance": {
+      "title": "Asistencia",
+      "description": "Gestionar registros de asistencia de empleados",
+      "importCsv": "Importar CSV",
+      "totalEmployees": "Total Empleados",
+      "present": "Presentes",
+      "absent": "Ausentes",
+      "late": "Tardanzas",
+      "onLeave": "Con Permiso",
+      "allStatuses": "Todos los Estados",
+      "searchPlaceholder": "Buscar por nombre, correo o ID...",
+      "tableTitle": "Registros de Asistencia ({count})",
+      "noRecords": "No se encontraron registros de asistencia",
+      "overrideDialog": {
+        "title": "Anular Asistencia",
+        "newStatus": "Nuevo Estado",
+        "notes": "Notas (opcional)",
+        "notesPlaceholder": "Motivo de la anulación",
+        "updateStatus": "Actualizar Estado"
+      },
+      "importDialog": {
+        "title": "Importar CSV de Asistencia",
+        "csvFormat": "Formato CSV: empleadoId,fecha,entrada,salida,estado",
+        "import": "Importar",
+        "importComplete": "¡Importación Completa!",
+        "importedSkipped": "{imported} importados, {skipped} omitidos",
+        "errors": "Errores:",
+        "done": "Listo"
+      }
+    },
+    "leaves": {
+      "title": "Gestión de Permisos",
+      "filterAll": "todos",
+      "filterPending": "pendiente",
+      "filterApproved": "aprobado",
+      "filterRejected": "rechazado",
+      "noLeaves": "Sin solicitudes de permiso",
+      "noLeavesDescription": "No se encontraron solicitudes de permiso {filter}.",
+      "days": "({days} Días)",
+      "approved": "Aprobado",
+      "rejected": "Rechazado",
+      "pending": "Pendiente"
+    },
+    "departments": {
+      "title": "Departamentos",
+      "description": "Gestionar departamentos de la empresa",
+      "addDepartment": "Agregar Departamento",
+      "tableTitle": "Todos los Departamentos",
+      "noDepartments": "No se encontraron departamentos",
+      "noDepartmentsHint": "Haz clic en \"Agregar Departamento\" para crear uno",
+      "category": "DEPARTAMENTO",
+      "confirmDelete": "¿Estás seguro de que deseas eliminar este departamento?",
+      "formTitle": {
+        "edit": "Editar Departamento",
+        "add": "Agregar Departamento"
+      },
+      "name": "Nombre del Departamento",
+      "namePlaceholder": "Ej. Ingeniería",
+      "descriptionLabel": "Descripción (Opcional)",
+      "descriptionPlaceholder": "Breve descripción del departamento"
+    },
+    "shifts": {
+      "title": "Turnos",
+      "description": "Gestionar turnos de trabajo de empleados",
+      "addShift": "Agregar Turno",
+      "tableTitle": "Todos los Turnos",
+      "noShifts": "No se encontraron turnos",
+      "noShiftsHint": "Haz clic en \"Agregar Turno\" para crear uno",
+      "category": "TURNO",
+      "workHours": "({hours}h Trabajo)",
+      "lateThreshold": "Umbral de Tardanza: {minutes} min",
+      "confirmDelete": "¿Estás seguro de que deseas eliminar este turno?",
+      "formTitle": {
+        "edit": "Editar Turno",
+        "add": "Agregar Turno"
+      },
+      "name": "Nombre del Turno",
+      "namePlaceholder": "Ej. Turno Mañana",
+      "startTime": "Hora de Inicio",
+      "endTime": "Hora de Fin",
+      "workingHours": "Horas de Trabajo",
+      "lateThresholdMin": "Umbral de Tardanza (min)"
+    },
+    "payroll": {
+      "title": "Gestión de Nómina",
+      "generate": "Generar Nómina",
+      "noRecords": "Sin registros de nómina",
+      "noRecordsDescription": "No se generó nómina para {month} {year}. Haz clic en Generar Nómina para crear.",
+      "basic": "Base:",
+      "net": "Neto:",
+      "days": "Días"
+    },
+    "reports": {
+      "title": "Informes y Análisis",
+      "description": "Perspectivas completas de asistencia y métricas de rendimiento",
+      "totalEmployees": "Total Empleados",
+      "presentToday": "Presentes Hoy",
+      "absentToday": "Ausentes Hoy",
+      "onLeaveToday": "Con Permiso Hoy",
+      "monthlyOverview": "Resumen Mensual de Asistencia",
+      "noData": "Sin Datos",
+      "noAttendanceRecords": "No se encontraron registros de asistencia para este mes",
+      "departmentDistribution": "Distribución por Departamento",
+      "noDepartmentData": "No hay datos de departamentos disponibles",
+      "trendTitle": "Tendencia de Asistencia (6 meses)",
+      "noTrendData": "Sin Datos de Tendencia",
+      "insufficientData": "Datos insuficientes para análisis de tendencia",
+      "topPerformers": "Mejores Empleados",
+      "rank": "Rango",
+      "employee": "Empleado",
+      "department": "Departamento",
+      "presentDays": "Días Presentes",
+      "lateDays": "Días Tardanza",
+      "attendanceRate": "Tasa de Asistencia",
+      "punctuality": "Puntualidad",
+      "noPerformersData": "Sin Datos de Rendimiento",
+      "noPerformersDescription": "No hay datos de rendimiento de empleados disponibles para este período"
+    },
+    "settings": {
+      "title": "Configuración del Sistema",
+      "description": "Configurar geolocalización, correo y otras preferencias del sistema",
+      "geoTitle": "Configuración de Geolocalización",
+      "geofenceTitle": "Configuración de Geocerca",
+      "geofenceDescription": "Establece la ubicación y radio de tu oficina para validar los registros de empleados. Los empleados fuera de este radio serán marcados como \"Fuera de Oficina\".",
+      "officeLat": "Latitud de la Oficina",
+      "latPlaceholder": "Ej. 24.8607",
+      "latRange": "Rango válido: -90 a 90",
+      "officeLng": "Longitud de la Oficina",
+      "lngPlaceholder": "Ej. 67.0011",
+      "lngRange": "Rango válido: -180 a 180",
+      "radius": "Radio Permitido (metros)",
+      "radiusRange": "Rango: 10 a 5000 metros. Recomendado: 100-200m para edificios de oficinas.",
+      "geofenceMode": "Modo de Geocerca",
+      "strictDescription": "El modo estricto requiere que los empleados estén dentro del radio",
+      "lenientDescription": "El modo permisivo permite registros desde cualquier lugar",
+      "lenient": "Permisivo",
+      "strict": "Estricto",
+      "saveSettings": "Guardar Configuración",
+      "saving": "Guardando...",
+      "emailTitle": "Configuración de Correo",
+      "smtpConfig": "Configuración SMTP",
+      "host": "Servidor:",
+      "notConfigured": "No configurado",
+      "port": "Puerto:",
+      "sender": "Remitente:",
+      "smtpNote": "La configuración SMTP se establece mediante variables de entorno. Contacta al administrador del sistema para actualizarlas.",
+      "testEmail": "Correo de Prueba",
+      "testEmailDescription": "Envía un correo de prueba para verificar tu configuración SMTP",
+      "sendTest": "Enviar Prueba",
+      "sending": "Enviando...",
+      "autoPayslip": "Envío Automático de Recibos",
+      "autoPayslipDescription": "Enviar automáticamente recibos de pago a empleados cuando se finaliza la nómina",
+      "autoPayslipEnabled": "El envío automático de recibos está habilitado. Los empleados recibirán una notificación por correo cuando su recibo esté listo."
+    },
+    "auditLogs": {
+      "title": "Registro de Auditoría",
+      "description": "Seguimiento de todas las acciones administrativas y cambios del sistema",
+      "actionType": "Tipo de Acción",
+      "targetModel": "Modelo Objetivo",
+      "fromDate": "Desde Fecha",
+      "toDate": "Hasta Fecha",
+      "clear": "Limpiar",
+      "activityLog": "Registro de Actividad",
+      "noLogs": "Sin Registros de Auditoría",
+      "noLogsDescription": "No hay actividad registrada que coincida con tus filtros",
+      "field": "Campo",
+      "old": "Anterior",
+      "new": "Nuevo",
+      "showing": "Mostrando {from} a {to} de {total} entradas",
+      "page": "Página {page} de {total}"
+    },
+    "stats": {
+      "presentToday": "Presentes Hoy",
+      "vsYesterday": "vs ayer",
+      "absentToday": "Ausentes Hoy",
+      "employees": "empleados",
+      "lateToday": "Tardanzas Hoy",
+      "attendanceRate": "Tasa de Asistencia",
+      "thisMonth": "este mes",
+      "avgHours": "Prom. Horas/Día",
+      "totalEmployees": "Total Empleados",
+      "active": "activos"
+    }
+  },
+  "employee": {
+    "sidebar": {
+      "dashboard": "Mi Panel",
+      "attendance": "Mi Asistencia",
+      "leaves": "Solicitar Permiso",
+      "payslip": "Mi Recibo",
+      "notifications": "Notificaciones",
+      "expand": "Expandir Barra Lateral",
+      "collapse": "Colapsar Barra Lateral"
+    },
+    "dashboard": {
+      "welcomeBack": "Bienvenido de nuevo",
+      "overview": "Resumen de {month}",
+      "thisMonth": "Este Mes",
+      "daysPresent": "{count} días",
+      "workingDays": "de {total} días laborales",
+      "hoursWorked": "Horas Trabajadas",
+      "totalThisMonth": "total este mes",
+      "attendance": "Asistencia",
+      "great": "¡Excelente!",
+      "good": "Bien",
+      "needsImprovement": "Necesita mejorar",
+      "recentHistory": "Historial Reciente de Asistencia",
+      "viewMonth": "Ver Mes:",
+      "noRecords": "Sin registros de asistencia para este mes",
+      "loggedEntry": "ENTRADA REGISTRADA"
+    },
+    "attendance": {
+      "title": "Mi Historial de Asistencia",
+      "noRecords": "Sin registros de asistencia",
+      "noRecordsDescription": "No se encontraron registros de asistencia para este mes.",
+      "loggedAttendance": "ASISTENCIA REGISTRADA"
+    },
+    "leaves": {
+      "title": "Gestión de Permisos",
+      "description": "Solicita y controla tu saldo de permisos",
+      "applyButton": "Solicitar Permiso",
+      "annualLeave": "Permiso Anual",
+      "sickLeave": "Permiso por Enfermedad",
+      "casualLeave": "Permiso Casual",
+      "daysRemaining": "días restantes",
+      "historyTitle": "Historial de Permisos",
+      "noLeaves": "Sin solicitudes de permiso",
+      "noLeavesDescription": "Aún no has solicitado ningún permiso.",
+      "leaveRequest": "SOLICITUD DE PERMISO",
+      "days": "({days} Días)",
+      "applyModal": {
+        "title": "Solicitar Permiso",
+        "leaveType": "Tipo de Permiso",
+        "annual": "Permiso Anual",
+        "sick": "Permiso por Enfermedad",
+        "casual": "Permiso Casual",
+        "unpaid": "Permiso No Remunerado",
+        "startDate": "Fecha de Inicio",
+        "endDate": "Fecha de Fin",
+        "reason": "Motivo",
+        "submit": "Enviar",
+        "cancel": "Cancelar"
+      }
+    },
+    "payslip": {
+      "title": "Mi Recibo de Pago",
+      "noPayslip": "Sin recibo de pago",
+      "noPayslipDescription": "No hay recibo disponible para {month} {year}.",
+      "employeePayslip": "Recibo de Pago",
+      "basicSalary": "Salario Base",
+      "presentDays": "Días Presentes",
+      "absentDeduction": "Descuento por Ausencia",
+      "lateDeduction": "Descuento por Tardanza",
+      "unpaidLeaveDeduction": "Descuento por Permiso No Remunerado",
+      "bonuses": "Bonificaciones",
+      "netSalary": "Salario Neto",
+      "computerGenerated": "Este recibo es generado por computadora y no requiere firma.",
+      "generatedOn": "Generado el {date}",
+      "downloadPdf": "Descargar PDF"
+    },
+    "notifications": {
+      "title": "Notificaciones",
+      "all": "Todas",
+      "unread": "No leídas",
+      "markAllRead": "Marcar todas como leídas",
+      "noNotifications": "Sin notificaciones",
+      "noUnread": "No hay notificaciones no leídas.",
+      "noAny": "No tienes notificaciones.",
+      "justNow": "Justo ahora",
+      "minutesAgo": "hace {min}m",
+      "hoursAgo": "hace {hours}h",
+      "daysAgo": "hace {days}d"
+    },
+    "checkInOut": {
+      "notCheckedIn": "Sin Registro de Entrada",
+      "checkedInAt": "Entrada registrada a las {time}",
+      "checkedOut": "Salida registrada — {hours}h trabajadas",
+      "completedToday": "Completado por hoy",
+      "checkIn": "Registrar Entrada",
+      "checkOut": "Registrar Salida"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 
 <img src="public/logo.png" width="120" alt="AttendEase Logo" />
 
@@ -411,7 +411,7 @@ npm install
 
 ```env
 # Database
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/attendease
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/AttendEase
 
 # Authentication
 JWT_SECRET=your_minimum_32_character_random_secret_here

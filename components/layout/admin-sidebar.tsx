@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/src/i18n/navigation";
+import { Link } from "@/src/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
@@ -21,24 +21,26 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useSidebar } from "@/lib/SidebarContext";
-
-const navItems = [
-  { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
-  { name: "Employees", href: "/admin/employees", icon: Users },
-  { name: "Attendance", href: "/admin/attendance", icon: ClipboardCheck },
-  { name: "Leaves", href: "/admin/leaves", icon: Calendar },
-  { name: "Payroll", href: "/admin/payroll", icon: DollarSign },
-  { name: "Shifts", href: "/admin/shifts", icon: Clock },
-  { name: "Departments", href: "/admin/departments", icon: Building2 },
-  { name: "Reports", href: "/admin/reports", icon: BarChart2 },
-  { name: "Audit Logs", href: "/admin/audit-logs", icon: ScrollText },
-  { name: "Settings", href: "/admin/settings", icon: Settings },
-];
+import { useTranslations } from "next-intl";
 
 export function AdminSidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { isAdminCollapsed: isCollapsed, setIsAdminCollapsed: setIsCollapsed } = useSidebar();
+  const t = useTranslations("admin.sidebar");
+
+  const navItems = [
+    { name: t("dashboard"), href: "/admin", icon: LayoutDashboard },
+    { name: t("employees"), href: "/admin/employees", icon: Users },
+    { name: t("attendance"), href: "/admin/attendance", icon: ClipboardCheck },
+    { name: t("leaves"), href: "/admin/leaves", icon: Calendar },
+    { name: t("payroll"), href: "/admin/payroll", icon: DollarSign },
+    { name: t("shifts"), href: "/admin/shifts", icon: Clock },
+    { name: t("departments"), href: "/admin/departments", icon: Building2 },
+    { name: t("reports"), href: "/admin/reports", icon: BarChart2 },
+    { name: t("auditLogs"), href: "/admin/audit-logs", icon: ScrollText },
+    { name: t("settings"), href: "/admin/settings", icon: Settings },
+  ];
 
   return (
     <>
@@ -69,13 +71,13 @@ export function AdminSidebar() {
         {/* Logo */}
         <div className="h-20 flex items-center justify-center border-b border-[var(--neu-border)] p-4">
           <Link href="/admin" className="flex items-center gap-2">
-            <img 
-              src="/logo.png" 
-              alt="AttendEase Logo" 
+            <img
+              src="/logo.png"
+              alt="AttendEase Logo"
               className={cn(
                 "transition-all duration-300",
                 isCollapsed ? "w-10 h-10 object-contain" : "h-12 w-auto object-contain"
-              )} 
+              )}
             />
           </Link>
         </div>
@@ -86,9 +88,9 @@ export function AdminSidebar() {
           className={cn(
             "hidden lg:flex absolute right-2 top-4 w-8 h-8 bg-[var(--neu-surface)] rounded-lg items-center justify-center text-[var(--neu-text-secondary)] shadow-sm z-50 hover:bg-[var(--neu-accent)] hover:text-white transition-all",
             "border border-white/5",
-            isCollapsed && "right-[-40px] bg-[var(--neu-accent)] text-white" // When collapsed, stick it out slightly so it's clickable
+            isCollapsed && "right-[-40px] bg-[var(--neu-accent)] text-white"
           )}
-          title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+          title={isCollapsed ? t("expand") : t("collapse")}
         >
           {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
         </button>
@@ -101,7 +103,7 @@ export function AdminSidebar() {
 
             return (
               <Link
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className={cn(

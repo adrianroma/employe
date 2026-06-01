@@ -1,4 +1,4 @@
-# Integrate Flickering Footer
+﻿# Integrate Flickering Footer
 
 This plan outlines the steps to integrate a high-quality "Flickering Footer" component into the AttendEase landing page, customized with project-specific content and theme matching.
 

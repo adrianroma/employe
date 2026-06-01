@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import { User, LogOut } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { NotificationBell } from "./notification-bell";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
 interface UserData {
   name: string;
@@ -16,10 +18,11 @@ interface UserData {
 export function Header() {
   const pathname = usePathname();
   const router = useRouter();
+  const locale = useLocale();
   const [user, setUser] = useState<UserData | null>(null);
+  const t = useTranslations("dashboard.header");
 
   useEffect(() => {
-    // Fetch current user data
     const fetchUser = async () => {
       try {
         const response = await fetch("/api/auth/me");
@@ -37,25 +40,24 @@ export function Header() {
   const handleLogout = async () => {
     try {
       await fetch("/api/auth/logout", { method: "POST" });
-      // Use window.location.href for a full page refresh to clear all React states and caches
-      window.location.href = "/login";
+      window.location.href = `/${locale}/login`;
     } catch (error) {
       console.error("Logout failed", error);
     }
   };
 
-  // Get page title from pathname
   const getPageTitle = () => {
     const path = pathname.split("/").pop();
     if (!path || path === "admin" || path === "employee") return "Dashboard";
     return path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, " ");
   };
 
-  const initials = user?.name
-    ?.split(" ")
-    .map((n) => n[0])
-    .join("")
-    .toUpperCase() || "U";
+  const initials =
+    user?.name
+      ?.split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase() || "U";
 
   return (
     <header className="h-16 bg-[var(--neu-surface)]/90 backdrop-blur-md border-b border-[var(--neu-border)] flex items-center justify-between px-6 sticky top-0 z-30">
@@ -65,7 +67,10 @@ export function Header() {
       </h1>
 
       {/* Right side */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
+        {/* Language Switcher */}
+        <LanguageSwitcher />
+
         {/* Notification Bell */}
         <NotificationBell />
 
@@ -76,7 +81,7 @@ export function Header() {
           </div>
           <div className="hidden md:block">
             <p className="text-sm font-medium text-[var(--neu-text)]">
-              {user?.name || "Loading..."}
+              {user?.name || t("loading")}
             </p>
             <p className="text-xs text-[var(--neu-text-secondary)] capitalize">
               {user?.role || ""}
@@ -87,7 +92,7 @@ export function Header() {
           <button
             onClick={handleLogout}
             className="p-2 rounded-lg hover:bg-[var(--neu-surface-light)] text-[var(--neu-text-secondary)] hover:text-[var(--neu-danger)] transition-colors"
-            title="Logout"
+            title={t("logout")}
           >
             <LogOut size={18} />
           </button>

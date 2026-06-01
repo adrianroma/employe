@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/src/i18n/navigation";
+import { Link } from "@/src/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
@@ -16,19 +16,21 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useSidebar } from "@/lib/SidebarContext";
-
-const navItems = [
-  { name: "My Dashboard", href: "/employee", icon: LayoutDashboard },
-  { name: "My Attendance", href: "/employee/attendance", icon: ClipboardCheck },
-  { name: "Apply Leave", href: "/employee/leaves", icon: CalendarPlus },
-  { name: "My Payslip", href: "/employee/payslip", icon: FileText },
-  { name: "Notifications", href: "/employee/notifications", icon: Bell },
-];
+import { useTranslations } from "next-intl";
 
 export function EmployeeSidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { isEmployeeCollapsed: isCollapsed, setIsEmployeeCollapsed: setIsCollapsed } = useSidebar();
+  const t = useTranslations("employee.sidebar");
+
+  const navItems = [
+    { name: t("dashboard"), href: "/employee", icon: LayoutDashboard },
+    { name: t("attendance"), href: "/employee/attendance", icon: ClipboardCheck },
+    { name: t("leaves"), href: "/employee/leaves", icon: CalendarPlus },
+    { name: t("payslip"), href: "/employee/payslip", icon: FileText },
+    { name: t("notifications"), href: "/employee/notifications", icon: Bell },
+  ];
 
   return (
     <>
@@ -59,13 +61,13 @@ export function EmployeeSidebar() {
         {/* Logo */}
         <div className="h-20 flex items-center justify-center border-b border-[var(--neu-border)] p-4">
           <Link href="/employee" className="flex items-center gap-2">
-            <img 
-              src="/logo.png" 
-              alt="AttendEase Logo" 
+            <img
+              src="/logo.png"
+              alt="AttendEase Logo"
               className={cn(
                 "transition-all duration-300",
                 isCollapsed ? "w-10 h-10 object-contain" : "h-12 w-auto object-contain"
-              )} 
+              )}
             />
           </Link>
         </div>
@@ -75,9 +77,9 @@ export function EmployeeSidebar() {
           onClick={() => setIsCollapsed(!isCollapsed)}
           className={cn(
             "hidden lg:flex absolute right-[-14px] top-[74px] w-7 h-7 bg-[var(--neu-accent)] rounded-full items-center justify-center text-white shadow-lg z-50 hover:scale-110 transition-all duration-200 border-2 border-[var(--neu-bg)]",
-            isCollapsed && "rotate-180" // Simple way to toggle icon direction if using same icon
+            isCollapsed && "rotate-180"
           )}
-          title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+          title={isCollapsed ? t("expand") : t("collapse")}
         >
           {isCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
         </button>
@@ -90,7 +92,7 @@ export function EmployeeSidebar() {
 
             return (
               <Link
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className={cn(

@@ -6,6 +6,7 @@ import { ChipLoader } from "@/components/ui/chip-loader";
 import { NeuCard, NeuCardContent } from "@/components/ui/neu-card";
 import { NeuButton } from "@/components/ui/neu-button";
 import { NeuBadge } from "@/components/ui/neu-badge";
+import { useTranslations, useLocale } from "next-intl";
 
 interface TodayRecord {
   _id: string;
@@ -16,8 +17,8 @@ interface TodayRecord {
   hoursWorked: number;
 }
 
-function formatTime(date: Date): string {
-  return date.toLocaleTimeString("en-US", {
+function formatTime(date: Date, locale: string): string {
+  return date.toLocaleTimeString(locale, {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
@@ -25,8 +26,8 @@ function formatTime(date: Date): string {
   });
 }
 
-function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
+function formatDate(date: Date, locale: string): string {
+  return date.toLocaleDateString(locale, {
     weekday: "long",
     year: "numeric",
     month: "long",
@@ -34,9 +35,9 @@ function formatDate(date: Date): string {
   });
 }
 
-function formatShortTime(dateStr: string): string {
+function formatShortTime(dateStr: string, locale: string): string {
   const date = new Date(dateStr);
-  return date.toLocaleTimeString("en-US", {
+  return date.toLocaleTimeString(locale, {
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
@@ -44,6 +45,9 @@ function formatShortTime(dateStr: string): string {
 }
 
 export default function CheckInOutPanel() {
+  const t = useTranslations("employee.checkInOut");
+  const locale = useLocale();
+
   const [currentTime, setCurrentTime] = React.useState<Date | null>(null);
   const [todayRecord, setTodayRecord] = React.useState<TodayRecord | null>(null);
   const [loading, setLoading] = React.useState(false);
@@ -133,26 +137,13 @@ export default function CheckInOutPanel() {
   const isCheckedOut = todayRecord?.checkOut !== null;
   const isCompleted = isCheckedIn && isCheckedOut;
 
-  const getStatusInfo = () => {
-    if (!isCheckedIn) {
-      return {
-        text: "Not Checked In",
-        color: "text-[var(--neu-text-muted)]",
-      };
-    }
-    if (!isCheckedOut) {
-      return {
-        text: `Checked In at ${formatShortTime(todayRecord.checkIn)}`,
-        color: "text-[var(--neu-success)]",
-      };
-    }
-    return {
-      text: `Checked Out — ${todayRecord.hoursWorked.toFixed(1)}h worked`,
-      color: "text-[var(--neu-accent)]",
-    };
+  const getStatusText = () => {
+    if (!isCheckedIn) return { text: t("notCheckedIn"), color: "text-[var(--neu-text-muted)]" };
+    if (!isCheckedOut) return { text: t("checkedInAt", { time: formatShortTime(todayRecord.checkIn, locale) }), color: "text-[var(--neu-success)]" };
+    return { text: t("checkedOut", { hours: todayRecord.hoursWorked.toFixed(1) }), color: "text-[var(--neu-accent)]" };
   };
 
-  const statusInfo = getStatusInfo();
+  const statusInfo = getStatusText();
 
   return (
     <NeuCard className="w-full">
@@ -163,11 +154,11 @@ export default function CheckInOutPanel() {
             <div className="flex items-center justify-center gap-2 mb-1">
               <Clock className="w-5 h-5 md:w-6 md:h-6 text-[var(--neu-accent)]" />
               <span className="text-3xl md:text-5xl font-bold text-[var(--neu-text)] tracking-tight" suppressHydrationWarning>
-                {currentTime ? formatTime(currentTime) : "--:--:-- --"}
+                {currentTime ? formatTime(currentTime, locale) : "--:--:-- --"}
               </span>
             </div>
             <p className="text-lg text-[var(--neu-text-secondary)]" suppressHydrationWarning>
-              {currentTime ? formatDate(currentTime) : "Loading..."}
+              {currentTime ? formatDate(currentTime, locale) : "..."}
             </p>
           </div>
 
@@ -196,7 +187,7 @@ export default function CheckInOutPanel() {
               className="w-48 h-14 text-lg opacity-60"
             >
               <CheckCircle className="w-5 h-5" />
-              Completed for today
+              {t("completedToday")}
             </NeuButton>
           ) : !isCheckedIn ? (
             <NeuButton
@@ -207,7 +198,7 @@ export default function CheckInOutPanel() {
               className="w-48 h-14 text-lg bg-[var(--neu-success)] hover:brightness-110"
             >
               <LogIn className="w-5 h-5" />
-              Check In
+              {t("checkIn")}
             </NeuButton>
           ) : (
             <NeuButton
@@ -217,7 +208,7 @@ export default function CheckInOutPanel() {
               className="w-48 h-14 text-lg bg-[var(--neu-warning)] text-[var(--neu-bg)] hover:brightness-110"
             >
               <LogOut className="w-5 h-5" />
-              Check Out
+              {t("checkOut")}
             </NeuButton>
           )}
         </div>

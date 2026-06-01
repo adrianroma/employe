@@ -1,4 +1,4 @@
-# AttendEase — Project Technical Reference
+﻿# AttendEase — Project Technical Reference
 
 > A comprehensive technical reference for contributors, reviewers, and future maintainers of the AttendEase platform.
 
