@@ -138,11 +138,11 @@ export default function RegisterForm() {
     <NeuCard className="w-full max-w-md mx-auto">
       <NeuCardHeader className="text-center pt-8">
         <div className="flex justify-center mb-6">
-          <img src="/logo.png" alt="AttendEase Logo" className="h-20 w-auto object-contain" />
+          <img src="/logo.png" alt="Gruas Bermejo Logo" className="h-20 w-auto object-contain" />
         </div>
         <NeuCardTitle className="text-2xl">Create Account</NeuCardTitle>
         <NeuCardDescription>
-          Sign up for an AttendEase account
+          Sign up for an Gruas Bermejo account
         </NeuCardDescription>
       </NeuCardHeader>
 

@@ -115,7 +115,7 @@ export default function EmployeePayslipPage() {
             <div className="border-b border-[var(--neu-border)] pb-6 mb-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                  <h3 className="text-xl font-bold text-[var(--neu-accent)]">AttendEase</h3>
+                  <h3 className="text-xl font-bold text-[var(--neu-accent)]">Gruas Bermejo</h3>
                   <p className="text-sm text-[var(--neu-text-secondary)]">{t("employeePayslip")}</p>
                 </div>
                 <div className="sm:text-right">

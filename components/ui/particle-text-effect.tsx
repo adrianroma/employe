@@ -130,9 +130,9 @@ function randomOffscreen(cx: number, cy: number, mag: number): Vector2D {
   return { x: cx + (dx / m) * mag, y: cy + (dy / m) * mag };
 }
 
-// ── AttendEase project words ──────────────────────────────────────
+// ── Gruas Bermejo project words ──────────────────────────────────────
 const DEFAULT_WORDS = [
-  "AttendEase",
+  "Gruas Bermejo",
   "GPS Check-In",
   "Payroll Engine",
   "Manage Leaves",

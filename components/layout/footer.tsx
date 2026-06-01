@@ -13,7 +13,7 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto text-center">
         <p className="text-sm text-[var(--neu-text-muted)]">
-          © 2026 AttendEase — Employee Attendance System
+          © 2026 Gruas Bermejo — Employee Attendance System
         </p>
       </div>
     </footer>

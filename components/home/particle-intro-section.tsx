@@ -1,16 +1,17 @@
-﻿"use client";
+"use client";
 
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-// ssr:false because it touches canvas / requestAnimationFrame
 const ParticleTextEffect = dynamic(
   () => import("@/components/ui/particle-text-effect").then((m) => ({ default: m.ParticleTextEffect })),
   { ssr: false }
 );
 
+// Feature names stay in English — they are animated as canvas text (technical brand terms)
 const PROJECT_WORDS = [
-  "AttendEase",
+  "Gruas Bermejo",
   "GPS Check-In",
   "Payroll Engine",
   "Manage Leaves",
@@ -20,18 +21,20 @@ const PROJECT_WORDS = [
   "Admin Panel",
 ];
 
-const WORD_DESCRIPTIONS: Record<string, string> = {
-  "AttendEase":     "Your all-in-one HR management platform for growing teams",
-  "GPS Check-In":   "Location-verified attendance with Haversine geo-fencing",
-  "Payroll Engine": "Auto-calculates salary, deductions & bonuses every month",
-  "Manage Leaves":  "Sick, casual, annual & unpaid leaves with balance tracking",
-  "Role Access":    "Admin and employee portals with JWT role-based routing",
-  "HR Platform":    "From check-in to payslip — the complete HR workflow",
-  "Track Hours":    "Real-time working hours, overtime & late-arrival detection",
-  "Admin Panel":    "Dashboard with charts, reports, audit logs & export tools",
-};
-
 export default function ParticleIntroSection() {
+  const t = useTranslations("home.intro");
+
+  const WORD_DESCRIPTIONS: Record<string, string> = {
+    "Gruas Bermejo":     t("words.gruasBermejo"),
+    "GPS Check-In":   t("words.gpsCheckIn"),
+    "Payroll Engine": t("words.payrollEngine"),
+    "Manage Leaves":  t("words.manageLeaves"),
+    "Role Access":    t("words.roleAccess"),
+    "HR Platform":    t("words.hrPlatform"),
+    "Track Hours":    t("words.trackHours"),
+    "Admin Panel":    t("words.adminPanel"),
+  };
+
   return (
     <section className="relative w-full px-4 py-20 md:py-32">
       {/* ── Headings ── */}
@@ -43,17 +46,16 @@ export default function ParticleIntroSection() {
         className="mb-12 text-center"
       >
         <span className="mb-4 inline-block rounded-full border border-[var(--neu-accent)]/30 bg-[var(--neu-accent)]/10 px-5 py-1.5 text-xs font-semibold uppercase tracking-widest text-[var(--neu-accent)]">
-          Interactive Introduction
+          {t("badge")}
         </span>
         <h1 className="text-4xl font-extrabold text-[var(--neu-text)] md:text-6xl lg:text-7xl">
-          Meet{" "}
+          {t("heading")}{" "}
           <span className="bg-gradient-to-r from-[var(--neu-accent)] to-purple-400 bg-clip-text text-transparent">
-            AttendEase
+            Gruas Bermejo
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-[var(--neu-text-secondary)] md:text-xl">
-          Watch every feature come to life — particles rearrange into the next
-          idea every few seconds. Right-click to scatter them.
+          {t("description")}
         </p>
       </motion.div>
 
@@ -77,7 +79,7 @@ export default function ParticleIntroSection() {
         />
       </motion.div>
 
-      {/* ── Feature pills (cycle labels) ── */}
+      {/* ── Feature pills ── */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

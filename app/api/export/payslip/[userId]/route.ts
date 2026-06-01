@@ -77,7 +77,7 @@ export async function GET(
     // Company Header
     doc.setFontSize(20);
     doc.setTextColor(30, 58, 95);
-    doc.text("AttendEase", 14, 20);
+    doc.text("Gruas Bermejo", 14, 20);
 
     doc.setFontSize(12);
     doc.setTextColor(100, 100, 100);

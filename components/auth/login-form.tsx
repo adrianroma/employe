@@ -105,7 +105,7 @@ export default function LoginForm() {
         </div>
         <NeuCardTitle className="text-2xl">Welcome Back</NeuCardTitle>
         <NeuCardDescription>
-          Sign in to your AttendEase account
+          Sign in to your Gruas Bermejo account
         </NeuCardDescription>
       </NeuCardHeader>
 

@@ -8,6 +8,7 @@ import Link from "next/link";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Clock } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -294,41 +295,37 @@ export function useMediaQuery(query: string) {
   return value;
 }
 
-export const siteConfig = {
-  hero: {
-    description: "Smart Employee Attendance Management — Track hours, manage leaves, and generate payroll with ease.",
-  },
-  footerLinks: [
-    {
-      title: "Platform",
-      links: [
-        { id: 1, title: "Dashboard", url: "/login" },
-        { id: 2, title: "Check-In", url: "/login" },
-        { id: 3, title: "Reports", url: "/login" },
-        { id: 4, title: "Profile", url: "/login" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { id: 5, title: "About", url: "#" },
-        { id: 6, title: "Privacy Policy", url: "#" },
-        { id: 7, title: "Terms of Service", url: "#" },
-      ],
-    },
-    {
-      title: "Support",
-      links: [
-        { id: 8, title: "Help Center", url: "#" },
-        { id: 9, title: "Documentation", url: "#" },
-        { id: 10, title: "Contact", url: "#" },
-      ],
-    },
-  ],
-};
-
 export const FlickeringFooter = () => {
+  const t = useTranslations("home.footer");
   const tablet = useMediaQuery("(max-width: 1024px)");
+
+  const footerLinks = [
+    {
+      title: t("platform"),
+      links: [
+        { id: 1, title: t("dashboard"), url: "/login" },
+        { id: 2, title: t("checkIn"),   url: "/login" },
+        { id: 3, title: t("reports"),   url: "/login" },
+        { id: 4, title: t("profile"),   url: "/login" },
+      ],
+    },
+    {
+      title: t("company"),
+      links: [
+        { id: 5, title: t("about"),          url: "#" },
+        { id: 6, title: t("privacyPolicy"),  url: "#" },
+        { id: 7, title: t("termsOfService"), url: "#" },
+      ],
+    },
+    {
+      title: t("support"),
+      links: [
+        { id: 8,  title: t("helpCenter"),    url: "#" },
+        { id: 9,  title: t("documentation"), url: "#" },
+        { id: 10, title: t("contact"),       url: "#" },
+      ],
+    },
+  ];
 
   return (
     <footer id="footer" className="w-full pb-0 relative z-10">
@@ -336,15 +333,15 @@ export const FlickeringFooter = () => {
         <div className="flex flex-col items-start justify-start gap-y-5 max-w-xs mx-0">
           <Link href="/" className="flex items-center gap-2">
             <Icons.logo className="size-8" />
-            <p className="text-xl font-semibold text-[var(--neu-text)]">AttendEase</p>
+            <p className="text-xl font-semibold text-[var(--neu-text)]">Gruas Bermejo</p>
           </Link>
           <p className="tracking-tight text-white/80 font-medium">
-            {siteConfig.hero.description}
+            {t("description")}
           </p>
         </div>
         <div className="pt-5 md:w-1/2">
           <div className="flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between gap-y-5 lg:pl-10">
-            {siteConfig.footerLinks.map((column, columnIndex) => (
+            {footerLinks.map((column, columnIndex) => (
               <ul key={columnIndex} className="flex flex-col gap-y-2">
                 <li className="mb-2 text-sm font-semibold text-[var(--neu-text)]">
                   {column.title}
@@ -369,7 +366,7 @@ export const FlickeringFooter = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-[var(--neu-bg)] z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
           <FlickeringGrid
-            text={tablet ? "AttendEase" : "Manage Your Team Effortlessly"}
+            text={tablet ? "AttendEase" : t("tagline")}
             fontSize={tablet ? 70 : 90}
             className="h-full w-full"
             squareSize={2}
@@ -382,7 +379,7 @@ export const FlickeringFooter = () => {
       </div>
       <div className="py-6 text-center border-t border-[var(--neu-surface)]">
         <p className="text-sm text-[var(--neu-text-secondary)]">
-          © 2026 AttendEase
+          {t("copyright")}
         </p>
       </div>
     </footer>

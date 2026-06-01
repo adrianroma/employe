@@ -127,7 +127,7 @@ export default function Navbar() {
           href={user.role === "admin" ? "/dashboard" : "/employee"}
           className="flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          <img src="/logo.png" alt="AttendEase Logo" className="h-10 w-auto object-contain" />
+          <img src="/logo.png" alt="Gruas Bermejo Logo" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Desktop Navigation */}

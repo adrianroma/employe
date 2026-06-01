@@ -21,16 +21,94 @@
     "features": {
       "title": "Plataforma HR Completa",
       "description": "Todo lo que necesitas para gestionar tu equipo de forma eficiente"
+    },
+    "intro": {
+      "badge": "Introducción Interactiva",
+      "heading": "RRHH",
+      "description": "Cada función cobra vida — las partículas se reorganizan en la siguiente idea cada pocos segundos. Haz clic derecho para dispersarlas.",
+      "words": {
+        "gruasBermejo": "Tu plataforma todo-en-uno de gestión de RRHH para equipos en crecimiento",
+        "gpsCheckIn": "Asistencia verificada por ubicación con geocercas Haversine",
+        "payrollEngine": "Calcula automáticamente salario, deducciones y bonos cada mes",
+        "manageLeaves": "Permisos médicos, casuales, anuales y no remunerados con seguimiento",
+        "roleAccess": "Portales de admin y empleado con enrutamiento basado en roles JWT",
+        "hrPlatform": "Del registro al recibo — el flujo completo de RRHH",
+        "trackHours": "Horas trabajadas en tiempo real, horas extra y detección de tardanzas",
+        "adminPanel": "Panel con gráficos, informes, auditoría y herramientas de exportación"
+      }
+    },
+    "radar": {
+      "badge": "Descripción General",
+      "heading": "Todo lo que Necesitas para",
+      "headingHighlight": "Gestionar la Asistencia",
+      "description": "Gruas Bermejo RH es una plataforma de RRHH completa — construida para equipos pequeños y medianos que necesitan herramientas potentes sin el costo empresarial.",
+      "timeTracking": "Control de Tiempo",
+      "payroll": "Nómina",
+      "leaveMgmt": "Gest. Permisos",
+      "notifications": "Notificaciones",
+      "excelExport": "Exportar Excel",
+      "analytics": "Análisis",
+      "roleAccess": "Control de Acceso",
+      "employeeMgmt": "Gest. Empleados",
+      "statFeatures": "Funciones",
+      "statApiRoutes": "Rutas API",
+      "statRoles": "Roles",
+      "statModules": "Módulos"
+    },
+    "bento": {
+      "gpsCheckIn": "Entrada GPS",
+      "gpsCheckInDesc": "Seguimiento de asistencia basado en ubicación con verificación GPS en tiempo real y geocercas",
+      "payrollEngine": "Motor de Nómina",
+      "payrollEngineDesc": "Cálculo automático de salarios basado en datos de asistencia",
+      "manageLeaves": "Gestión de Permisos",
+      "manageLeavesDesc": "Gestión inteligente de permisos con flujos de aprobación y seguimiento de saldo",
+      "roleAccess": "Control de Acceso",
+      "roleAccessDesc": "Permisos detallados con roles protegidos por JWT para Admin y Empleado",
+      "hrPlatform": "Plataforma RRHH",
+      "hrPlatformDesc": "Suite completa de RRHH con perfiles de empleados, departamentos y organigrama",
+      "trackHours": "Control de Horas",
+      "trackHoursDesc": "Seguimiento preciso del tiempo con cálculos de horas extra y deducciones",
+      "adminPanel": "Panel Admin",
+      "adminPanelDesc": "Panel completo con informes, análisis y gestión del sistema",
+      "apiRoutes": "Rutas API",
+      "apiRoutesDesc": "Manejadores de rutas Next.js completamente tipados con endpoints completos",
+      "userRoles": "Roles de Usuario",
+      "userRolesDesc": "Admin y Empleado con guardias JWT y control de acceso basado en roles",
+      "coreModules": "Módulos Principales",
+      "coreModulesDesc": "Asistencia · Permiso · Nómina · Informes · Auditoría · Notificaciones",
+      "active": "Activo",
+      "ready": "Listo",
+      "live": "En Vivo",
+      "secure": "Seguro",
+      "complete": "Completo"
+    },
+    "footer": {
+      "description": "Gestión Inteligente de Asistencia — Controla horas, gestiona permisos y genera nómina fácilmente.",
+      "tagline": "Gestiona Tu Equipo Fácilmente",
+      "platform": "Plataforma",
+      "dashboard": "Panel",
+      "checkIn": "Registro",
+      "reports": "Informes",
+      "profile": "Perfil",
+      "company": "Empresa",
+      "about": "Nosotros",
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfService": "Términos de Servicio",
+      "support": "Soporte",
+      "helpCenter": "Centro de Ayuda",
+      "documentation": "Documentación",
+      "contact": "Contacto",
+      "copyright": "© 2026 AttendEase"
     }
   },
   "auth": {
     "login": {
       "quote": "¡Bienvenido de nuevo! Registra asistencia, gestiona permisos y optimiza tu flujo de trabajo.",
-      "quoteAuthor": "Equipo AttendEase"
+      "quoteAuthor": "Equipo Gruas Bermejo"
     },
     "register": {
       "quote": "¡Únete hoy! Comienza a gestionar la asistencia de tu equipo de forma eficiente.",
-      "quoteAuthor": "Equipo AttendEase"
+      "quoteAuthor": "Equipo Gruas Bermejo"
     },
     "signIn": {
       "title": "Inicia sesión en tu cuenta",

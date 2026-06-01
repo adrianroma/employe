@@ -16,6 +16,7 @@ import {
     Activity,
 } from "lucide-react";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export interface BentoItem {
     title: string;
@@ -132,94 +133,100 @@ function BentoGrid({ items, className }: BentoGridProps) {
 }
 
 // Pre-configured BentoGrid items for AttendEase
-export const attendEaseBentoItems: BentoItem[] = [
-    {
-        title: "GPS Check-In",
-        meta: "Live",
-        description: "Location-based attendance tracking with real-time GPS verification and geofencing support",
-        icon: <MapPin className="w-5 h-5 text-[var(--neu-accent)]" />,
-        status: "Active",
-        tags: ["GPS", "Real-time", "Geofencing"],
-        colSpan: 2,
-        hasPersistentHover: true,
-    },
-    {
-        title: "Payroll Engine",
-        meta: "Auto-calc",
-        description: "Automated salary calculations based on attendance data",
-        icon: <DollarSign className="w-5 h-5 text-emerald-400" />,
-        status: "Ready",
-        tags: ["Payroll", "Auto"],
-    },
-    {
-        title: "Manage Leaves",
-        meta: "Smart",
-        description: "Intelligent leave management with approval workflows and balance tracking",
-        icon: <Clock className="w-5 h-5 text-purple-400" />,
-        status: "Live",
-        tags: ["Leaves", "Workflow"],
-    },
-    {
-        title: "Role Access",
-        meta: "Secure",
-        description: "Granular permissions with Admin & Employee JWT-protected roles",
-        icon: <Shield className="w-5 h-5 text-amber-400" />,
-        status: "Secure",
-        tags: ["RBAC", "JWT", "Auth"],
-        colSpan: 1,
-    },
-    {
-        title: "HR Platform",
-        meta: "Unified",
-        description: "Complete HR suite with employee profiles, departments, and org chart",
-        icon: <Users className="w-5 h-5 text-sky-400" />,
-        tags: ["HR", "Profiles"],
-    },
-    {
-        title: "Track Hours",
-        meta: "Accurate",
-        description: "Precise time tracking with overtime calculations and break deductions",
-        icon: <Activity className="w-5 h-5 text-rose-400" />,
-        status: "Live",
-        tags: ["Time", "OT"],
-    },
-    {
-        title: "Admin Panel",
-        meta: "Full Control",
-        description: "Comprehensive dashboard with reports, analytics, and system management",
-        icon: <LayoutDashboard className="w-5 h-5 text-indigo-400" />,
-        tags: ["Dashboard", "Reports"],
-        colSpan: 2,
-    },
-];
+export function useAttendEaseBentoItems(): BentoItem[] {
+    const t = useTranslations("home.bento");
+    return [
+        {
+            title: t("gpsCheckIn"),
+            meta: "Live",
+            description: t("gpsCheckInDesc"),
+            icon: <MapPin className="w-5 h-5 text-[var(--neu-accent)]" />,
+            status: t("active"),
+            tags: ["GPS", "Real-time", "Geofencing"],
+            colSpan: 2,
+            hasPersistentHover: true,
+        },
+        {
+            title: t("payrollEngine"),
+            meta: "Auto-calc",
+            description: t("payrollEngineDesc"),
+            icon: <DollarSign className="w-5 h-5 text-emerald-400" />,
+            status: t("ready"),
+            tags: ["Payroll", "Auto"],
+        },
+        {
+            title: t("manageLeaves"),
+            meta: "Smart",
+            description: t("manageLeavesDesc"),
+            icon: <Clock className="w-5 h-5 text-purple-400" />,
+            status: t("live"),
+            tags: ["Leaves", "Workflow"],
+        },
+        {
+            title: t("roleAccess"),
+            meta: "Secure",
+            description: t("roleAccessDesc"),
+            icon: <Shield className="w-5 h-5 text-amber-400" />,
+            status: t("secure"),
+            tags: ["RBAC", "JWT", "Auth"],
+            colSpan: 1,
+        },
+        {
+            title: t("hrPlatform"),
+            meta: "Unified",
+            description: t("hrPlatformDesc"),
+            icon: <Users className="w-5 h-5 text-sky-400" />,
+            tags: ["HR", "Profiles"],
+        },
+        {
+            title: t("trackHours"),
+            meta: "Accurate",
+            description: t("trackHoursDesc"),
+            icon: <Activity className="w-5 h-5 text-rose-400" />,
+            status: t("live"),
+            tags: ["Time", "OT"],
+        },
+        {
+            title: t("adminPanel"),
+            meta: "Full Control",
+            description: t("adminPanelDesc"),
+            icon: <LayoutDashboard className="w-5 h-5 text-indigo-400" />,
+            tags: ["Dashboard", "Reports"],
+            colSpan: 2,
+        },
+    ];
+}
 
 // Stats Bento Items
-export const statsBentoItems: BentoItem[] = [
-    {
-        title: "API Routes",
-        meta: "30+",
-        description: "Fully typed Next.js route handlers with comprehensive endpoints",
-        icon: <FileText className="w-5 h-5 text-[var(--neu-accent)]" />,
-        status: "REST",
-        tags: ["Next.js", "TypeScript"],
-    },
-    {
-        title: "User Roles",
-        meta: "2",
-        description: "Admin & Employee with JWT guards and role-based access control",
-        icon: <Shield className="w-5 h-5 text-purple-400" />,
-        status: "RBAC",
-        tags: ["JWT", "Auth"],
-    },
-    {
-        title: "Core Modules",
-        meta: "6",
-        description: "Attendance · Leave · Payroll · Reports · Audit · Notifications",
-        icon: <BarChart3 className="w-5 h-5 text-emerald-400" />,
-        status: "Complete",
-        tags: ["Modular", "Scalable"],
-    },
-];
+export function useStatsBentoItems(): BentoItem[] {
+    const t = useTranslations("home.bento");
+    return [
+        {
+            title: t("apiRoutes"),
+            meta: "30+",
+            description: t("apiRoutesDesc"),
+            icon: <FileText className="w-5 h-5 text-[var(--neu-accent)]" />,
+            status: "REST",
+            tags: ["Next.js", "TypeScript"],
+        },
+        {
+            title: t("userRoles"),
+            meta: "2",
+            description: t("userRolesDesc"),
+            icon: <Shield className="w-5 h-5 text-purple-400" />,
+            status: "RBAC",
+            tags: ["JWT", "Auth"],
+        },
+        {
+            title: t("coreModules"),
+            meta: "6",
+            description: t("coreModulesDesc"),
+            icon: <BarChart3 className="w-5 h-5 text-emerald-400" />,
+            status: t("complete"),
+            tags: ["Modular", "Scalable"],
+        },
+    ];
+}
 
 // Quick Actions Bento Items (replacing the 3 feature cards)
 export const quickActionsBentoItems: BentoItem[] = [

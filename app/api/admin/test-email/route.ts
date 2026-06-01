@@ -36,8 +36,8 @@ export async function POST(
       subject: `[TEST] ${template.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #1e3a5f;">AttendEase Email Test</h2>
-          <p>This is a test email from your AttendEase system.</p>
+          <h2 style="color: #1e3a5f;">Gruas Bermejo Email Test</h2>
+          <p>This is a test email from your Gruas Bermejo system.</p>
           <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
           ${template.html}
           <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />

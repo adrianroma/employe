@@ -6,7 +6,7 @@ import NeuralBackground from "@/components/ui/flow-field-background";
 import ProjectRadarSection from "@/components/home/project-radar-section";
 import ParticleIntroSection from "@/components/home/particle-intro-section";
 import { FlickeringFooter } from "@/components/ui/flickering-footer";
-import { BentoGrid, attendEaseBentoItems, statsBentoItems } from "@/components/ui/bento-grid";
+import { BentoGrid, useAttendEaseBentoItems, useStatsBentoItems } from "@/components/ui/bento-grid";
 import { Home as HomeIcon, BarChart3, LayoutGrid, User } from "lucide-react";
 import { NavBar } from "@/components/ui/tube-light-navbar";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
@@ -15,6 +15,8 @@ import { LanguageSwitcher } from "@/components/ui/language-switcher";
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const t = useTranslations("home");
+  const attendEaseBentoItems = useAttendEaseBentoItems();
+  const statsBentoItems = useStatsBentoItems();
 
   useEffect(() => {
     setMounted(true);
